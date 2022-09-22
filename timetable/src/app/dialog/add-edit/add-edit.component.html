@@ -1,0 +1,63 @@
+<h1 mat-dialog-title >{{ isEdit ? "Edit " +data.d :"Add an "}}  Opening Time</h1>
+ <form [formGroup]="buForm" class="container" >
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%" >
+    <mat-label>First Period</mat-label>
+    <div>
+      <input matInput type="time"
+       formControlName="dalle_1" class="null"
+>
+    </div>
+    <mat-error *ngIf="this.buForm.get('dalle_1').errors?.dateLessThan">
+      Should be earlier date.
+  </mat-error>
+  </mat-form-field>
+  <!-- <small [class.d-none]="this.buForm.get('dalle_1').valid || this.buForm.get('dalle_1').untouched" class="text-danger margin-small">Pls Insert a time</small> -->
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <div>
+      <input matInput type="time"
+       formControlName="alle_1"
+       class="null"
+      >
+
+
+    </div>
+  </mat-form-field>
+  <!-- <small [class.d-none]="this.buForm.get('alle_1').valid || this.buForm.get('alle_1').untouched" class="text-danger margin-small">Pls Insert a time</small> -->
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%" >
+    <mat-label>Second Period</mat-label>
+    <div>
+      <input matInput type="time"
+       formControlName="dalle_2"
+       class="null"
+ >
+    </div>
+    <mat-error *ngIf="this.buForm.get('dalle_2').errors?.dateLessThan">
+      Should be earlier date.
+  </mat-error>
+  </mat-form-field>
+  <!-- <small [class.d-none]="this.buForm.get('dalle_2').valid || this.buForm.get('dalle_2').untouched" class="text-danger margin-small">Pls Insert a time</small> -->
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <div>
+      <input matInput type="time"
+       formControlName="alle_2"
+   >
+
+    </div>
+   </mat-form-field>
+   <!-- <small [class.d-none]="this.buForm.get('alle_2').valid || this.buForm.get('alle_2').untouched" class="text-danger margin-small">Pls Insert a time</small> -->
+
+
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" (click)="onCloseClick()">Chiudi</button>
+    <button mat-raised-button type="submit" color="primary" disabled="{{disable===true}}" (click)="onSaveClick()">Salva</button>
+  </div>
+</form>

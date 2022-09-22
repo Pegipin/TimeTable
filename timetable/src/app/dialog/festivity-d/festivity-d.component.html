@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>{{ isEdit ? "Modifica" : "Aggiungi una "}}  Opening Time</h1>
+<form [formGroup]="buForm" class="container" (submit)="submitForm()" >
+
+
+   <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <mat-label>Day </mat-label>
+    <div>
+      <input matInput type="number" formControlName="giorno" required>
+    </div>
+  </mat-form-field>
+
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select a month</mat-label>
+    <select matNativeControl formControlName="mese" required>
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+
+    </select>
+  </mat-form-field>
+
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <mat-label>Year </mat-label>
+    <div>
+      <input matInput type="number"  formControlName="anno" >
+    </div>
+
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%" >
+    <mat-label>Description</mat-label>
+    <input matInput type="text" formControlName="descrizione" required >
+  </mat-form-field>
+
+  <span class="text-danger"
+ *ngIf="(buForm.controls.descrizione.touched || submitted)
+   && buForm.controls.descrizione.errors?.required">
+  description is required
+    </span>
+
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" (click)="onCloseClick()">Chiudi</button>
+    <button mat-raised-button type="submit" color="primary" disabled="{{disable===true}}"> Salva</button>
+  </div>
+</form>
+

@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>{{ isEdit ? "Edit" : "Add a  "}} Specific Date </h1>
+<form [formGroup]="buForm" class="container">
+
+
+
+  <mat-form-field style='margin-bottom: 30px;' appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <mat-label>First Period</mat-label>
+    <div>
+      <input matInput type="time" formControlName="time1" >
+    </div>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <div>
+      <input matInput type="time" formControlName="time2" >
+    </div>
+
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <mat-label>Second Period</mat-label>
+    <input matInput type="time" formControlName="time3" >
+
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-12" style="width: 100%">
+    <div>
+      <input matInput type="time" formControlName="time4" >
+    </div>
+
+  </mat-form-field>
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" (click)="onCloseClick()">Chiudi</button>
+    <button mat-raised-button type="submit" color="primary" disabled="{{disable===true}}" (click)="onSaveClick()" >Salva</button>
+  </div>
+</form>
+
+

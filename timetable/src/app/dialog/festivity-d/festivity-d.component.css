@@ -1,0 +1,23 @@
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.totheright {
+  margin: 0;
+  position: absolute;
+  top: -10%;
+  right: 70%;
+}
+.border{
+  border-radius: 4px !important;
+}
+
+table{
+width: 100%;
+}
+

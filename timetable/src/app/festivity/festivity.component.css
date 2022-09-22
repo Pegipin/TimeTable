@@ -1,0 +1,8 @@
+table {
+  width: 100%;
+}
+.container-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-block: 20px;
+}
